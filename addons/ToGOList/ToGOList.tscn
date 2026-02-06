@@ -83,11 +83,59 @@ oversampling_override = 1.0
 title = "Info"
 position = Vector2i(277, 36)
 size = Vector2i(500, 500)
+visible = false
 
 [node name="ToGoList" type="Sprite2D" parent="Window" unique_id=937061056]
-position = Vector2(253, 88)
+position = Vector2(239, 80)
 scale = Vector2(0.18249993, 0.18249993)
 texture = ExtResource("2_o64s7")
+
+[node name="GitPage" type="LinkButton" parent="Window" unique_id=73504267]
+offset_left = 184.0
+offset_top = 154.0
+offset_right = 296.0
+offset_bottom = 181.0
+theme_override_font_sizes/font_size = 19
+text = "Github Page"
+uri = "https://github.com/TheMR2/ToGoList"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Window" unique_id=983567065]
+offset_left = 32.0
+offset_top = 245.0
+offset_right = 493.0
+offset_bottom = 290.0
+theme_override_constants/separation = 32
+
+[node name="Linkdin" type="LinkButton" parent="Window/HBoxContainer" unique_id=298338024]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.4392157, 0.8745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "Linkdin"
+uri = "https://www.linkedin.com/notifications/?filter=all"
+
+[node name="Youtube" type="LinkButton" parent="Window/HBoxContainer" unique_id=2143577067]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "YouTube"
+uri = "https://www.youtube.com/@MR-np5nl"
+
+[node name="Facebook" type="LinkButton" parent="Window/HBoxContainer" unique_id=1143014755]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0.8745098, 1)
+theme_override_font_sizes/font_size = 32
+text = "Facebook"
+uri = "https://www.facebook.com/"
+
+[node name="The_MR" type="LinkButton" parent="Window" unique_id=1051166252]
+offset_left = 127.0
+offset_top = 349.0
+offset_right = 368.0
+offset_bottom = 437.0
+theme_override_colors/font_color = Color(0.34117648, 0.5294118, 0.8745098, 1)
+theme_override_font_sizes/font_size = 64
+text = "The_MR"
+uri = "https://the-mr.netlify.app/"
 
 [connection signal="value_changed" from="VBoxContainer/ToDoList_Panel_Size" to="." method="_on_h_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/Panel/Save" to="." method="_on_save_pressed"]
