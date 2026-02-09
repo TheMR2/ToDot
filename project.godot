@@ -17,15 +17,14 @@ config/icon="uid://b1tip86ctxeil"
 
 [display]
 
-window/size/mode=4
+window/size/mode=1
 window/size/borderless=true
-window/size/transparent=true
+window/size/always_on_top=true
 window/stretch/mode="canvas_items"
-window/per_pixel_transparency/allowed=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GitGodot/plugin.cfg", "res://addons/ToGOList/plugin.cfg")
+enabled=PackedStringArray("res://addons/GitGodot/plugin.cfg", "res://addons/ToGOList/plugin.cfg", "res://addons/ToGoDot/plugin.cfg")
 
 [physics]
 
@@ -36,4 +35,3 @@ enabled=PackedStringArray("res://addons/GitGodot/plugin.cfg", "res://addons/ToGO
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-viewport/transparent_background=true

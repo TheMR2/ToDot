@@ -2,7 +2,6 @@
 extends BoxContainer
 
 var data :Array= []
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Load()
@@ -15,22 +14,19 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_h_slider_value_changed(value: float) -> void:
-	$VBoxContainer/Panel.custom_minimum_size.y = value
-	pass # Replace with function body.
 
 
 func _on_add_pressed() -> void:
-	Add_Mission()
+	Add_Task()
 	pass # Replace with function body.
 
-func Add_Mission():
-	var mission : CheckBox = CheckBox.new()
-	var missionName :String = $Misson.text
-	mission.text = missionName
-	mission.pressed.connect(Clear)
-	$VBoxContainer/Panel/Missions_List_Container/Missions_List.add_child(mission)
-	$Misson.clear()
+func Add_Task():
+	var task : CheckBox = CheckBox.new()
+	var taskName :String = $VBoxContainer2/Task.text
+	task.text = taskName
+	task.pressed.connect(Clear)
+	$VBoxContainer/Panel/Missions_List_Container/Missions_List.add_child(task)
+	$VBoxContainer2/Task.clear()
 	pass
 
 
@@ -100,6 +96,6 @@ func _on_window_close_requested() -> void:
 func _on_misson_editing_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		if Input.is_action_just_pressed("ui_accept"):
-			Add_Mission()
+			Add_Task()
 			pass
 	pass # Replace with function body.

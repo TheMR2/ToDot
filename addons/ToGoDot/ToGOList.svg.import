@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1tip86ctxeil"
-path="res://.godot/imported/ToGOList.svg-1c8348dc12a1a9cab37e1d0c72cb9db2.ctex"
+path="res://.godot/imported/ToGOList.svg-38c476b50e2cceb4f403f89cc4d365c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/ToGOList/ToGOList.svg"
-dest_files=["res://.godot/imported/ToGOList.svg-1c8348dc12a1a9cab37e1d0c72cb9db2.ctex"]
+source_file="res://addons/ToGoDot/ToGOList.svg"
+dest_files=["res://.godot/imported/ToGOList.svg-38c476b50e2cceb4f403f89cc4d365c7.ctex"]
 
 [params]
 
