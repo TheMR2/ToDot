@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="ToGoDot"
+config/name="ToDot"
 config/tags=PackedStringArray("godot_plugins")
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://ddkkok2kn3tew"
@@ -21,7 +21,7 @@ window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/GitGodot/plugin.cfg", "res://addons/ToDot/plugin.cfg", "res://addons/ToGoDot/plugin.cfg")
+enabled=PackedStringArray("res://addons/GitGodot/plugin.cfg", "res://addons/ToDot/plugin.cfg")
 
 [physics]
 
