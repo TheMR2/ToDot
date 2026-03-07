@@ -178,8 +178,64 @@ func _on_note_text_changed(new_text: String) -> void:
 	pass # Replace with function body.
 func Note_Load():
 	var Note = FileAccess.open("user://Note.json",FileAccess.READ)
-	var text = Note.get_as_text()
+	if Note:
+		var text = Note.get_as_text()
 	
-	$VBoxContainer2/Note.text = JSON.parse_string(text)
-	print(text)
+		$VBoxContainer2/Note.text = JSON.parse_string(text)
+		print(text)
 	pass
+
+
+func _on_export_pressed() -> void:
+	$Buttons_Container/Export/FileDialog.popup()
+	$Buttons_Container/Export/FileDialog.current_file = "Save.json"
+	pass # Replace with function body.
+
+
+
+func _on_file_dialog_file_selected(path: String) -> void:
+	for child in $VBoxContainer/Panel/TabContainer.get_children():
+		tabs = child.name
+		for Tasks in child.get_child(0).get_children():
+			tasks.append(Tasks.text)
+			pass
+	data.append([tabs,tasks.duplicate()])
+	tasks.clear()
+	var paths = FileAccess.open(path,FileAccess.WRITE)
+	var json = JSON.stringify(data)
+	paths.store_string(json)
+	paths.close()
+	print("ToDoList Exported successfully!")
+	$Buttons_Container/Export/FileDialog.hide()
+	pass # Replace with function body.
+
+
+func _on_import_pressed() -> void:
+	$Buttons_Container/Import/FileDialog.popup()
+	pass # Replace with function body.
+
+
+func _on_file_dialog_import_file_selected(path: String) -> void:
+	if FileAccess.file_exists(path):
+		var paths = FileAccess.open(path,FileAccess.READ)
+		var stringfyData = paths.get_as_text()
+		paths.close()
+		var Data = JSON.parse_string(stringfyData)
+		data = Data
+		for details in data:
+			var tab_name = details[0]
+			var Tasks = details[1]
+			var tab = ScrollContainer.new()
+			var scroll = VBoxContainer.new()
+			tab.add_child(scroll)
+			tab.name = tab_name
+			for CBox in Tasks:
+				var Task = CheckBox.new()
+				Task.text = CBox
+				tab.get_child(0).add_child(Task)
+				Task.pressed.connect(Clear)
+				pass
+			$VBoxContainer/Panel/TabContainer.add_child(tab)
+			pass
+		pass
+	pass # Replace with function body.

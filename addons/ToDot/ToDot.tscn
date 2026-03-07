@@ -138,6 +138,32 @@ size_flags_vertical = 8
 theme_override_font_sizes/font_size = 16
 text = "Info"
 
+[node name="Export" type="Button" parent="Buttons_Container" unique_id=1178476050]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 16
+text = "Export"
+
+[node name="FileDialog" type="FileDialog" parent="Buttons_Container/Export" unique_id=1313806889]
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+size = Vector2i(666, 465)
+access = 2
+filters = PackedStringArray("*.json")
+
+[node name="Import" type="Button" parent="Buttons_Container" unique_id=1365693382]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 16
+text = "Import"
+
+[node name="FileDialog" type="FileDialog" parent="Buttons_Container/Import" unique_id=1916104958]
+oversampling_override = 1.0
+position = Vector2i(0, 36)
+size = Vector2i(666, 465)
+access = 2
+filters = PackedStringArray("*.json")
+
 [node name="Add" type="Button" parent="Buttons_Container" unique_id=37936582]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
@@ -219,5 +245,9 @@ uri = "https://the-mr.netlify.app/"
 [connection signal="text_changed" from="VBoxContainer2/Note" to="." method="_on_note_text_changed"]
 [connection signal="editing_toggled" from="VBoxContainer2/Task" to="." method="_on_misson_editing_toggled"]
 [connection signal="pressed" from="Buttons_Container/Info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="Buttons_Container/Export" to="." method="_on_export_pressed"]
+[connection signal="file_selected" from="Buttons_Container/Export/FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="Buttons_Container/Import" to="." method="_on_import_pressed"]
+[connection signal="file_selected" from="Buttons_Container/Import/FileDialog" to="." method="_on_file_dialog_import_file_selected"]
 [connection signal="pressed" from="Buttons_Container/Add" to="." method="_on_add_pressed"]
 [connection signal="close_requested" from="Window" to="." method="_on_window_close_requested"]
